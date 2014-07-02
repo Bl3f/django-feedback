@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Feedback requests
+{% endblock %}
+
+{% block content %}
+    <table class="table table-condensed table-hover table-striped">
+        <tr>
+            <th>Type</th>
+            <th>Subject</th>
+            <th>Content</th>
+            <th>User</th>
+        </tr>
+        {% for feedback in object_list %}
+            <tr>
+                <td>{{ feedback.type }}</td>
+                <td>{{ feedback.subject }}</td>
+                <td>{{ feedback.content }}</td>
+                <td>{{ feedback.user }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
