@@ -11,7 +11,7 @@ feedback/forms.py
 feedback/models.py
 feedback/urls.py
 feedback/views.py
-feedback/static/feedback/css/feedback.css
+feedback/static/feedback/css/feedback-default.css
 feedback/static/feedback/img/feedback.png
 feedback/static/feedback/js/feedback.js
 feedback/templates/feedback/feedback.html
