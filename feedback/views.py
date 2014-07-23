@@ -29,11 +29,15 @@ class FeedbackView(TemplateView):
             feedback_message.user = request.user
             feedback_message.save()
 
+            requester = 'no-reply@equancy.com'
+            if '@' in feedback_message.user.email:
+                requester = feedback_message.user.email
+
             message = (u"[FEEDBACK ADHOC] {0}: {1}".format(feedback_message.type.capitalize(), feedback_message.subject),
                        u"{0}\n- - - - - - - - - -\nFrom user: {1}".format(feedback_message.content,
                                                                           feedback_message.user.username,
                                                                           ),
-                       feedback_message.user.email,
+                       requester,
                        getattr(settings, 'EMAIL_FOR', None),
                        )
 
